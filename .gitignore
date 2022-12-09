@@ -1,0 +1,28 @@
+# Local settings folder in Visual Studio Code
+.vs/
+.vscode/
+
+# Checkpoints for notebooks
+*.ipynb_checkpoints/
+
+# Temp python files
+*__pycache__
+
+# Image files
+*.svg
+*.png
+*.jpg
+*.tif
+*.gif
+*.ppt
+*.pptx
+
+# Multidimentional images (raw atlases)
+*.nrrd
+
+# Excel files
+*.xls
+*.xlsx
+
+# CSV files
+# *.csv
