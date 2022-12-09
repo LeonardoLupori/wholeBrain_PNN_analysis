@@ -20,6 +20,9 @@
 # Multidimentional images (raw atlases)
 *.nrrd
 
+# Json files
+*.json
+
 # Excel files
 *.xls
 *.xlsx
