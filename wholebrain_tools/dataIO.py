@@ -10,6 +10,38 @@ import configparser
 
 class pathParser():
     def __init__(self, filename = 'paths.ini'):
+        ''' pathParser class
+        It provides an easy method to parse file/directories paths, thus facilitating collaborative programming.
+        It requires a paths.ini file located in the upstream directory (the one containing the wholebrain_tools library).
+        This file contains both a 'FOLDER' and a 'FILE' section to be filled with the paths used during the analysis.
+    
+        Attributes
+        ----------
+            self.alldata
+                taken from ['FOLDERS']['resultsFolder']
+            self.genes
+                taken from ['FILES']['genes']
+            self.manifest
+                taken from ['FILES']['manifest']
+            self.structures
+                taken from ['FILES']['structures']
+            self.connectome
+                taken from ['FILES']['connectome']
+            self.corrdata_genes
+                taken from ['FOLDERS']['correlationGenesFolders']
+            self.go_results
+                taken from ['FOLDERS']['GOresultsFolder']
+            self.gene_list_for_go
+                taken from  ['FOLDERS']['GOgeneLists']
+            self.gene_list_for_matrisome
+                taken from ['FOLDERS']['matrisomeGeneLists']
+            self.matrisome
+                taken from ['FILES']['matrisome']
+            self.abaIsh_datasets
+                taken from ['FOLDERS']['ABAishDatasets']
+        
+        
+        '''
 
         folder = os.path.abspath(os.pardir)
         inifile = os.path.join(folder, filename)
