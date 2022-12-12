@@ -338,7 +338,7 @@ def loadDotsDf(searchPath:str,  mouseName:str, verbose:bool=True):
 
     # Select candidate files based on staining and mouse name
     fileList = listdir(searchPath)
-    suffix =  mouseName + '_dots_processed.csv'
+    suffix =  mouseName + '_combinedDots.csv'
     filename = join(searchPath,suffix)
 
     if not isdir(searchPath):
