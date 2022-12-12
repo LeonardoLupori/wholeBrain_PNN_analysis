@@ -17,7 +17,6 @@ class pathParser():
         config.read(inifile)
 
         self.alldata= config['FOLDERS']['resultsFolder']
-        self.coloc = config['FOLDERS']['colocalizationFolder']
         self.genes = config['FILES']['genes']
         self.manifest = config['FILES']['manifest']
         self.structures = config['FILES']['structures']
