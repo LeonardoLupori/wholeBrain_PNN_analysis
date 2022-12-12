@@ -17,10 +17,17 @@ class pathParser():
         config.read(inifile)
 
         self.alldata= config['FOLDERS']['resultsFolder']
+        self.coloc = config['FOLDERS']['colocalizationFolder']
         self.genes = config['FILES']['genes']
         self.manifest = config['FILES']['manifest']
         self.structures = config['FILES']['structures']
-
+        self.connectome = config['FILES']['connectome']
+        self.corrdata_genes = config['FOLDERS']['correlationGenesFolders']
+        self.go_results = config['FOLDERS']['GOresultsFolder']
+        self.gene_list_for_go = config['FOLDERS']['GOgeneLists']
+        self.gene_list_for_matrisome = config['FOLDERS']['matrisomeGeneLists']
+        self.matrisome = config['FILES']['matrisome']
+        self.abaIsh_datasets =  config['FOLDERS']['ABAishDatasets']
         return 
 
 def customCortexOrder():
