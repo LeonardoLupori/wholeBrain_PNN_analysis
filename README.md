@@ -13,19 +13,19 @@ The second environment is needed only for the renderings of brain slices, realis
 Thus, unless otherwise stated, run the code in the first environment.
 
 ## **wholebrain_tools package**
----
+
 Analysis in this work were conducted with the help of custom code wrapped in a python package. This package contains the following modules:
 - **aba**: handling of the Allen Brain Atlas 
 - **stats**: tools for statistical analysis
 - **graphics**: tools for custom plots
 - **dataIO**: file handling
 
-Importantly, the repository contains a path.ini.
+Note, the repository contains a **path.ini** configuration file, which is used to parse user-specified paths to the various functions in the notebooks, making collaborative programming easier. These paths are specified in the path.ini file and read by the pathParser object in the dataIO module. They are then assigned to dedicated variables. Alternatively, paths can be assigned directly to these variables rather than being specified in the path.ini file.
 
 ## **Figure 2**
 
 ### Distribution of WFA-positive PNNs throughout the entire mouse brain
----
+
 Plots in this figures provide a graphical visualization of the distriburion of WFA<sup>+</sup> perineuronal nets throughout the mouse brain.
 
 The folder contains the following notebooks:
@@ -36,7 +36,7 @@ The folder contains the following notebooks:
 ## **Figure 3**
 
 ### Brain-wide interactions between PNNs and PV cells
----
+
 Plots in this figures provide a graphical visualization of the colocalization of PNNs and PV cells throughout the mouse brain.
 
 The folder contains the following notebooks:
@@ -48,7 +48,7 @@ The folder contains the following notebooks:
 ## **Figure 4**
 
 ### PNNs aggregation depends on PV expression levels
----
+
 Plots in this figures explore the relationship between probability of having a PNN and PV expression levels throughout the mouse brain.
 
 The folder contains the following notebooks:
@@ -57,7 +57,7 @@ The folder contains the following notebooks:
 ## **Figure 5**
 
 ### Principles of PNN organization in cortical areas
----
+
 Plots in this figures explore the expression of PNNs in the cortex.
 
 The folder contains the following notebooks:
@@ -69,7 +69,7 @@ The folder contains the following notebooks:
 ## **Figure 6**
 
 ### Gene expression correlates of PNNs
----
+
 Plots in this figures explore correlation of PNN energy with known PNN molecular markers and the biological processes in which the genes correlated or anticorrelated with WFA staining are involved.
 
 - **figure_06_downloadGeneExprABA.ipynb** download of the AGEA dataset as a .csv file (see [Lein et al., 2007](https://doi.org/10.1038/nature05453)).
@@ -82,7 +82,7 @@ Plots in this figures explore correlation of PNN energy with known PNN molecular
 ## **Figure S01**
 
 ### The scores assigned by the scoring models correlate with raters’ agreement
----
+
 Plots in this figures show the performances of our scoring model
 
 The folder contains the following notebooks:
@@ -91,7 +91,7 @@ The folder contains the following notebooks:
 ## **Figure S02**
 
 ### PNN energy and WFA diffuse fluorescence measurements for medium-resolution brain areas grouped by their major subdivision
----
+
 Plots in this figures show PNN expression metrics at mid-ontology resolution
 
 The folder contains the following notebooks:
@@ -100,7 +100,6 @@ The folder contains the following notebooks:
 ## **Figure S03**
 
 ### Distribution of PV-positive cells throughout the entire mouse brain
----
 
 The folder contains the following notebooks:
 - **figure_S03_prepareDataForBrainRender.ipynb** preprocessing of data required by figure_S03_brainRenders.ipynb
@@ -110,7 +109,7 @@ The folder contains the following notebooks:
 ## **Figure S04**
 
 ### Colocalization of PNNs and PV cells in medium-resolution brain areas grouped by their major subdivision
----
+
 Plots in this figures show PNN/PV colocalization metrics at mid-ontology resolution
 
 The folder contains the following notebooks:
@@ -119,7 +118,7 @@ The folder contains the following notebooks:
 ## **Figure S05**
 
 ### WFA Diffuse Fluorescence in primary vs secondary areas by layers
----
+
 Plots in this figures show WFA diffuse fluorescence in sensory primary versus associative areas, split by layers.
 
 The folder contains the following notebooks:
@@ -128,7 +127,7 @@ The folder contains the following notebooks:
 ## **Figure S06**
 
 ### PV cell distribution in sensory cortical areas.
----
+
 Plots in this figures show PV distribution the sensory areas of the cortex.
 
 The folder contains the following notebooks:
@@ -138,7 +137,7 @@ The folder contains the following notebooks:
 ## **Figure S08**
 
 ### Properties of PV cells in high-WFA and low-WFA cortical subnetworks
----
+
 Plots in this figures show properties of PV cells in cortical subnetworks
 
 The folder contains the following notebooks:
@@ -146,7 +145,7 @@ The folder contains the following notebooks:
 
 
 ## **Supplementary data**
----
+
 Supplementary data are provided as .xlsx files produced with the following notebooks:
 
 - **data_SD1_SD2** whole-brain PNN/PV metrics
