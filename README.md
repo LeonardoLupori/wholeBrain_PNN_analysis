@@ -35,7 +35,7 @@ conda create -n pnnWholeBrain --file requirements.txt
 > conda create -n brainRender --file requirements_brainrender.txt
 > ```
 
-## **wholebrain_tools package**
+## wholebrain_tools package
 
 Analysis in this work were conducted with the help of custom code wrapped in a python package. This package contains the following modules:
 
@@ -46,7 +46,7 @@ Analysis in this work were conducted with the help of custom code wrapped in a p
 
 Note, the repository contains a **path.ini** configuration file, which is used to parse user-specified paths to the various functions in the notebooks, making collaborative programming easier. These paths are specified in the `path.ini` file and read by the pathParser object in the dataIO module. They are then assigned to dedicated variables. Alternatively, paths can be assigned directly to these variables rather than being specified in the `path.ini` file.
 
-## **Figure 2**
+## Figure 2
 
 ### Distribution of WFA-positive PNNs throughout the entire mouse brain
 
@@ -58,7 +58,7 @@ The folder contains the following notebooks:
 - **figure_S03_prepareDataForBrainRender.ipynb** preprocessing of data required by figure_02_brainRenders.ipynb. Saves a .csv file used for plotting by the brainRenders notebook
 - **figure_02_brainRenders.ipynb** heatmaps representing on brain coronal sections WFA diffuse fluorescence and PNN energy at mid-ontology resolution. Note: this notebook needs a conda environment with the packages listed in requirements_brainrender.txt.
 
-## **Figure 3**
+## Figure 3
 
 ### Brain-wide interactions between PNNs and PV cells
 
@@ -71,7 +71,7 @@ The folder contains the following notebooks:
 - **figure_03_colocalizationBrainRenders.ipynb** heatmaps representing on brain coronal sections the percentage of PNNs surrounding a PV cells and the percentage of PV cells ensheated by PNNs. Note: this notebook needs a conda environment with the packages listed in requirements_brainrender.txt.
 - **figure_03_correlation_pv_wfa.ipynb** scatterplots representing the relationship of WFA diffuse staining/PNN energy and PV energy.
 
-## **Figure 4**
+## Figure 4
 
 ### PNNs aggregation depends on PV expression levels
 
@@ -81,7 +81,7 @@ The folder contains the following notebooks:
 
 - **figure_04_colocProbability.ipynb**  scatterplots representing the relationship between PNN expression and intensity staining of individual PV cells.
 
-## **Figure 5**
+## Figure 5
 
 ### Principles of PNN organization in cortical areas
 
@@ -94,7 +94,7 @@ The folder contains the following notebooks:
 - **figure_05_functionalRegions.ipynb** scatterplots representing the relationship of PNN expression and intensity staining of individual PV cells.
 - **figure_05_connectome.ipynb** scatterplots representing the relationship between PNN expression in layers of the sensory cortex and density of thalamic afference.
 
-## **Figure 6**
+## Figure 6
 
 ### Gene expression correlates of PNNs
 
@@ -107,7 +107,7 @@ Plots in this figures explore correlation of PNN energy with known PNN molecular
 - **figure_06_preprocess_dataWFA.ipynb** correlation analysis of WFA fluorescence/PNN energy and gene expression data of AGEA dataset.
 - **figure_06_preprocess_dataPV.ipynb** correlation analysis of PV energy and AGEA dataset.
 
-## **Figure S01**
+## Figure S01
 
 ### The scores assigned by the scoring models correlate with raters’ agreement
 
@@ -117,7 +117,7 @@ The folder contains the following notebooks:
 
 - **figure_S01_networkMetrics.ipynb** boxplots representing the score assigned by the model to cells at different levels of agreement
 
-## **Figure S02**
+## Figure S02
 
 ### PNN energy and WFA diffuse fluorescence measurements for medium-resolution brain areas grouped by their major subdivision
 
@@ -127,7 +127,7 @@ The folder contains the following notebooks:
 
 - **figure_S02.ipynb** Barplots showing PNN energy and WFA diffuse fluorescence at mid-ontology level.
 
-## **Figure S03**
+## Figure S03
 
 ### Distribution of PV-positive cells throughout the entire mouse brain
 
@@ -137,7 +137,7 @@ The folder contains the following notebooks:
 - **figure_S03_brainrenders.ipynb** heatmaps representing on brain coronal sections PV diffuse fluorescence and PV energy at mid-ontology resolution. Note: this notebook needs a conda environment with the packages listed in requirements_brainrender.txt.
 - **figure_02_mainVisualizations.ipynb** all the other plots of the figure (scatterplots, heatmaps), representing the relationship of PV diffuse staining and PV energy as well as raw data of individual animals.
 
-## **Figure S04**
+## Figure S04
 
 ### Colocalization of PNNs and PV cells in medium-resolution brain areas grouped by their major subdivision
 
@@ -147,7 +147,7 @@ The folder contains the following notebooks:
 
 - **figure_S04_colocalization.ipynb** Barplots showing colocalization of PNNs and PV cells at mid-ontology level.
 
-## **Figure S05**
+## Figure S05
 
 ### WFA Diffuse Fluorescence in primary vs secondary areas by layers
 
