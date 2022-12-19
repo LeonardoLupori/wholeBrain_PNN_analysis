@@ -1467,6 +1467,74 @@ def parseTextLocation(txtLocation:str='tl'):
 
     return xPos, yPos, align
 
+
+def pvClasses_in_sensorySystems(data:pd.DataFrame, ax:object=None, fontScaling:float=1,
+    title:str=None, cmap:str='PuBu', hueVar:str='sensory', legendTitle:str=None):
+
+    # Prepare data
+    melted = data.melt(ignore_index=False).reset_index()
+
+    # Create axis if necessary
+    if not ax:
+        f, ax = plt.subplots(figsize=(5,5))
+
+    # Define colors for bars and points
+    cmap = cm.get_cmap(cmap)
+    paletteBars = {
+        'primary':cmap(0.6),
+        'high':cmap(0.6),
+        'associative':cmap(0.2),
+        'low':cmap(0.2),
+    }
+    palettePoints = {
+        'primary':cmap(0.85),
+        'high':cmap(0.85),
+        'associative':cmap(0.85),
+        'low':cmap(0.85),
+    }
+    if hueVar =='sensory':
+        order = ['primary','associative']
+    else:
+        order = ['high','low']
+
+    sns.barplot(
+        data=melted,
+        ax=ax,
+        x='intClass',
+        y='value',
+        hue=hueVar,
+        hue_order=order,
+        palette=paletteBars,
+        ci=68)
+
+    sns.stripplot(
+        data=melted,
+        ax=ax,
+        x='intClass',
+        y='value',
+        hue=hueVar,
+        hue_order=order,
+        palette=palettePoints,
+        dodge=True, 
+       )
+
+    # Customize legend
+    h,l = ax.get_legend_handles_labels()
+    if not legendTitle:
+        legendTitle='Sensory areas'
+    ax.legend(h[2::], l[2::], title=legendTitle, fontsize=14*fontScaling, 
+        title_fontsize=16*fontScaling,loc='best', frameon=False)
+
+    # Customize axis
+    ax.set_ylabel('Fraction of PV cells', fontsize=18*fontScaling)
+    ax.set_xlabel('PV Intensity Class', fontsize=18*fontScaling)  
+    sns.despine()
+    if title:
+        ax.set_title(title, fontsize=20*fontScaling)
+        
+    ax.tick_params(labelsize=16*fontScaling)
+
+
 # ------------------------------------------------------------------------------
 # ACCESSORY FUNCTIONS
 # ------------------------------------------------------------------------------

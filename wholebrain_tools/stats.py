@@ -381,8 +381,72 @@ def sensoryCortexByLayers(data:pd.DataFrame, metric:str='energy', printResults:b
 
     if printResults:
         print(res2way)
-        print("Post-hoc (Paired T-test, corrected with Sidak method))")
+        print("Post-hoc (Paired T-test, corrected with Sidak method)")
         for _, x in resPostHoc.iterrows():
             print(f"-Layer {x['layer']:10} t={x['t']:8.4f}  p={x['p']:.4f}  pAdj={x['adjP']:.4f}")
+
+    return res2way, resPostHoc
+
+
+def sensoryCortexIntClass(data:pd.DataFrame, printResults:bool=True):
+
+    melted = data.melt(ignore_index=False).reset_index()
+
+    # 2-Way Repeated measurements ANOVA
+    aovrm2way = AnovaRM(melted, 'value', 'mouse', within=['sensory', 'intClass'])
+    res2way = aovrm2way.fit()
+
+    # Statistics - post-hoc
+    resPostHoc = []
+    for intClass in melted['intClass'].unique():
+        temp = melted.loc[melted['intClass']==intClass]
+        # Paired T-test
+        stat, pval = ttest_rel(
+            temp.loc[temp['sensory']=='primary','value'],
+            temp.loc[temp['sensory']=='associative','value'])
+        resPostHoc.append((intClass, stat, pval))
+    # Sidak method for correction
+    pAdj = multipletests([x[2] for x in resPostHoc], method='sidak')
+    # Store all results in a dataframe
+    resPostHoc = pd.DataFrame(resPostHoc,columns=['intClass','t','p'])
+    resPostHoc['adjP'] = pAdj[1]
+
+    if printResults:
+        print(res2way)
+        print("Post-hoc (Paired T-test, corrected with Sidak method)")
+        for _, x in resPostHoc.iterrows():
+            print(f"-Intensity Class {x['intClass']:10} t={x['t']:8.4f}  p={x['p']:.4f}  pAdj={x['adjP']:.4f}")
+
+    return res2way, resPostHoc
+
+
+def hiLowWfa_IntClass(data:pd.DataFrame, printResults:bool=True):
+
+    melted = data.melt(ignore_index=False).reset_index()
+
+    # 2-Way Repeated measurements ANOVA
+    aovrm2way = AnovaRM(melted, 'value', 'mouse', within=['group', 'intClass'])
+    res2way = aovrm2way.fit()
+
+    # Statistics - post-hoc
+    resPostHoc = []
+    for intClass in melted['intClass'].unique():
+        temp = melted.loc[melted['intClass']==intClass]
+        # Paired T-test
+        stat, pval = ttest_rel(
+            temp.loc[temp['group']=='high','value'],
+            temp.loc[temp['group']=='low','value'])
+        resPostHoc.append((intClass, stat, pval))
+    # Sidak method for correction
+    pAdj = multipletests([x[2] for x in resPostHoc], method='sidak')
+    # Store all results in a dataframe
+    resPostHoc = pd.DataFrame(resPostHoc,columns=['intClass','t','p'])
+    resPostHoc['adjP'] = pAdj[1]
+
+    if printResults:
+        print(res2way)
+        print("Post-hoc (Paired T-test, corrected with Sidak method)")
+        for _, x in resPostHoc.iterrows():
+            print(f"-Intensity Class {x['intClass']:10} t={x['t']:8.4f}  p={x['p']:.4f}  pAdj={x['adjP']:.4f}")
 
     return res2way, resPostHoc
