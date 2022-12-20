@@ -14,26 +14,18 @@ To run the scripts in this repository you will need:
 In order to run the analysis code you will need to download a set of preprocessed data. You can find the data files in the latest release under the _assets_ menu.
 
 > **Please Note**  
-> If you want to dowload all the **raw** microscopy data that are related to this paper, you can download the entire dataset on Zenodo at XXX.
+> If you want to dowload all the **raw** microscopy data that are related to this paper, you can download the entire dataset on Zenodo [HERE](https://doi.org/10.5281/zenodo.7419283).
 
 ### Python Environment
 
-To run most of the scripts in this repository you will need python 3.7 and the correct version of several additional packages. You can easily install everything in a new vistual environment using anaconda.
+To run the scripts in this repository you will need python 3.8 and the correct version of several additional packages. You can easily install everything in a new vistual environment using anaconda.
 
-To do this, use the following command:
+To do this, use the following commands:
 
-``` conda
-conda create -n pnnWholeBrain --file requirements.txt
+```bash
+conda create -n pnnWholeBrain python==3.8
+pip install -r requirements.txt
 ```
-
-> **Please Note**  
-> Due to a Python version incompatibility, the three notebooks that generate renders of coronally sliced heatmaps of the brain with [brainrender](https://github.com/brainglobe/brainrender) and [bg-heatmaps](https://github.com/brainglobe/bg-heatmaps) cannot be run with the same environment.  
-> For this reason, you should prepare the data for rendering using the appropriate notebook and then run the brainRender notebooks using a different (Python 3.8) environment.  
-> You can install the brainRender environment with:  
->
-> ```
-> conda create -n brainRender --file requirements_brainrender.txt
-> ```
 
 ## wholebrain_tools package
 
@@ -44,13 +36,13 @@ Analysis in this work were conducted with the help of custom code wrapped in a p
 - **graphics**: tools for custom plots
 - **dataIO**: file handling
 
-Note, the repository contains a **path.ini** configuration file, which is used to parse user-specified paths to the various functions in the notebooks, making collaborative programming easier. These paths are specified in the `path.ini` file and read by the pathParser object in the dataIO module. They are then assigned to dedicated variables. Alternatively, paths can be assigned directly to these variables rather than being specified in the `path.ini` file.
+Note, the repository contains a `path.ini` configuration file, which is used to parse user-specified paths to the various functions in the notebooks, making collaborative programming easier. These paths are specified in the `path.ini` file and read by the pathParser object in the dataIO module. They are then assigned to dedicated variables. Alternatively, paths can be assigned directly to these variables rather than being specified in the `path.ini` file.
 
 ## Figure 2
 
 ### Distribution of WFA-positive PNNs throughout the entire mouse brain
 
-Plots in this figures provide a graphical visualization of the distriburion of WFA<sup>+</sup> perineuronal nets throughout the mouse brain.
+Plots in this figures provide a graphical visualization of the distriburion of WFA-positive perineuronal nets throughout the mouse brain.
 
 The folder contains the following notebooks:
 
@@ -190,6 +182,6 @@ The folder contains the following notebooks:
 
 Supplementary data are provided as .xlsx files produced with the following notebooks:
 
-- **data_SD1_SD2** whole-brain PNN/PV metrics
-- **data_SD3** whole-brain PNN/PV colocalization metrics
-- **data_SD4** correlation of staining metrics with gene expression
+- **data_SD1_SD2.ipynb** whole-brain PNN/PV metrics
+- **data_SD3.ipynb** whole-brain PNN/PV colocalization metrics
+- **data_SD4.ipynb** correlation of staining metrics with gene expression
