@@ -180,13 +180,21 @@ The folder contains the following notebooks:
 
 ## Figure S08
 
+### Thalamic inputs from the association-cortex-related portion of the thalamus (DORpm) do not correlate with PNNs in sensory cortices
+
+Plots in this figure represent correlation between PNN expression in the sensory areas of the cortex and afference from non-sensory thalamus
+
+- **figure_S08_nonsensoryThalamus.ipynb** scatterplots representing the relationship between PNN expression in layers of the sensory cortex and density of DORpm afference.
+
+## Figure S09
+
 ### Properties of PV cells in high-WFA and low-WFA cortical subnetworks
 
 Plots in this figures show properties of PV cells in cortical subnetworks
 
 The folder contains the following notebooks:
 
-- **figure_S08_functionalGroups_PV_coloc.ipynb** Barplots showing PNN/PV colocalization and PV energy in cortical subnetworks.
+- **figure_S09_functionalGroups_PV_coloc.ipynb** Barplots showing PNN/PV colocalization and PV energy in cortical subnetworks.
 
 ## Supplementary data
 
