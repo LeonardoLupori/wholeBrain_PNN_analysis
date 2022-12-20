@@ -24,6 +24,12 @@ To do this, use the following commands:
 
 ```bash
 conda create -n pnnWholeBrain python==3.8
+```
+
+Then activate the environment and install all the required packages
+
+```bash
+conda activate pnnWholeBrain
 pip install -r requirements.txt
 ```
 

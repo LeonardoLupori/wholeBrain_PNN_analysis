@@ -1505,7 +1505,7 @@ def pvClasses_in_sensorySystems(data:pd.DataFrame, ax:object=None, fontScaling:f
         hue=hueVar,
         hue_order=order,
         palette=paletteBars,
-        ci=68)
+        errorbar='se')
 
     sns.stripplot(
         data=melted,
