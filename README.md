@@ -27,6 +27,12 @@ conda create -n pnnWholeBrain python==3.8
 pip install -r requirements.txt
 ```
 
+## The paths.ini file
+
+The repository contains a `paths.ini` configuration file, which is used to parse user-specified paths to the various functions in the notebooks, making collaborative programming easier. These paths are specified in the `paths.ini` file and read by the pathParser object in the dataIO module. They are then assigned to dedicated variables. Alternatively, paths can be assigned directly to these variables rather than being specified in the `paths.ini` file.
+
+To run the notebooks download the `DATA` folder from the assets of this repo and manually put the full path of all the requested files and folders in the `paths.ini` file.
+
 ## wholebrain_tools package
 
 Analysis in this work were conducted with the help of custom code wrapped in a python package. This package contains the following modules:
@@ -35,8 +41,6 @@ Analysis in this work were conducted with the help of custom code wrapped in a p
 - **stats**: tools for statistical analysis
 - **graphics**: tools for custom plots
 - **dataIO**: file handling
-
-Note, the repository contains a `path.ini` configuration file, which is used to parse user-specified paths to the various functions in the notebooks, making collaborative programming easier. These paths are specified in the `path.ini` file and read by the pathParser object in the dataIO module. They are then assigned to dedicated variables. Alternatively, paths can be assigned directly to these variables rather than being specified in the `path.ini` file.
 
 ## Figure 2
 
