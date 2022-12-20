@@ -53,7 +53,7 @@ class pathParser():
         self.manifest = config['FILES']['manifest']
         self.structures = config['FILES']['structures']
         self.connectome = config['FILES']['connectome']
-        self.corrdata_genes = config['FOLDERS']['correlationGenesFolders']
+        self.corrdata_genes = config['FOLDERS']['correlationGenesFolder']
         self.go_results = config['FOLDERS']['GOresultsFolder']
         self.gene_list_for_go = config['FOLDERS']['GOgeneLists']
         self.gene_list_for_matrisome = config['FOLDERS']['matrisomeGeneLists']
