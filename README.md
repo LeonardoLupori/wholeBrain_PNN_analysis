@@ -58,7 +58,7 @@ The folder contains the following notebooks:
 
 - **figure_02_mainVisualizations.ipynb** all the plots of the figure (scatterplots, heatmaps), representing the relationship of WFA diffuse staining and PNN energy as well as raw data of individual animals.
 - **figure_S03_prepareDataForBrainRender.ipynb** preprocessing of data required by figure_02_brainRenders.ipynb. Saves a .csv file used for plotting by the brainRenders notebook
-- **figure_02_brainRenders.ipynb** heatmaps representing on brain coronal sections WFA diffuse fluorescence and PNN energy at mid-ontology resolution. Note: this notebook needs a conda environment with the packages listed in requirements_brainrender.txt.
+- **figure_02_brainRenders.ipynb** heatmaps representing on brain coronal sections WFA diffuse fluorescence and PNN energy at mid-ontology resolution.
 
 ## Figure 3
 
@@ -70,7 +70,7 @@ The folder contains the following notebooks:
 
 - **figure_03_colocalization.ipynb** barplots to visulize PNN/PV colocalization at the coarse level
 - **figure_03_prepareDataForBrainRender.ipynb** preprocessing of data required by figure_02_brainRenders.ipynb. Saves a .csv file used for plotting by the brainRenders notebook
-- **figure_03_colocalizationBrainRenders.ipynb** heatmaps representing on brain coronal sections the percentage of PNNs surrounding a PV cells and the percentage of PV cells ensheated by PNNs. Note: this notebook needs a conda environment with the packages listed in requirements_brainrender.txt.
+- **figure_03_colocalizationBrainRenders.ipynb** heatmaps representing on brain coronal sections the percentage of PNNs surrounding a PV cells and the percentage of PV cells ensheated by PNNs.
 - **figure_03_correlation_pv_wfa.ipynb** scatterplots representing the relationship of WFA diffuse staining/PNN energy and PV energy.
 
 ## Figure 4
@@ -136,7 +136,7 @@ The folder contains the following notebooks:
 The folder contains the following notebooks:
 
 - **figure_S03_prepareDataForBrainRender.ipynb** preprocessing of data required by figure_S03_brainRenders.ipynb
-- **figure_S03_brainrenders.ipynb** heatmaps representing on brain coronal sections PV diffuse fluorescence and PV energy at mid-ontology resolution. Note: this notebook needs a conda environment with the packages listed in requirements_brainrender.txt.
+- **figure_S03_brainrenders.ipynb** heatmaps representing on brain coronal sections PV diffuse fluorescence and PV energy at mid-ontology resolution.
 - **figure_02_mainVisualizations.ipynb** all the other plots of the figure (scatterplots, heatmaps), representing the relationship of PV diffuse staining and PV energy as well as raw data of individual animals.
 
 ## Figure S04
