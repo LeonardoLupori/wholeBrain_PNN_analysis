@@ -11,7 +11,7 @@ To run the scripts in this repository you will need:
 
 ### Download preprocessed data
 
-In order to run the analysis code you will need to download a set of preprocessed data. You can find the data files in the latest release under the _assets_ menu.
+In order to run the analysis code you will need to download a set of preprocessed data. You can find the data files in the latest release under the _assets_ menu at this [link](https://github.com/LeonardoLupori/wholeBrain_PNN_analysis/releases/latest)
 
 > **Please Note**  
 > If you want to dowload all the **raw** microscopy data that are related to this paper, you can download the entire dataset on Zenodo [HERE](https://doi.org/10.5281/zenodo.7419283).
