@@ -1,6 +1,6 @@
 # wholeBrain_PNN_analysis
 
-Analysis code to reproduce all figures of the paper _A Comprehensive Atlas of Perineuronal Net Distribution and Colocalization with Parvalbumin in the Adult Mouse Brain_
+Analysis code to reproduce all figures of the paper [_A Comprehensive Atlas of Perineuronal Net Distribution and Colocalization with Parvalbumin in the Adult Mouse Brain_](https://www.biorxiv.org/content/10.1101/2023.01.24.525313v1)
 
 ## Dependencies
 
