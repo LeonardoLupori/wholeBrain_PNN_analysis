@@ -39,6 +39,8 @@ class pathParser():
                 taken from ['FILES']['matrisome']
             self.abaIsh_datasets
                 taken from ['FOLDERS']['ABAishDatasets']
+            self.background
+                taken from ['FOLDERS']['backgroundResultsFolder']
         
         
         '''
@@ -59,6 +61,7 @@ class pathParser():
         self.gene_list_for_matrisome = config['FOLDERS']['matrisomeGeneLists']
         self.matrisome = config['FILES']['matrisome']
         self.abaIsh_datasets =  config['FOLDERS']['ABAishDatasets']
+        self.background = config['FOLDERS']['backgroundResultsFolder']
         return 
 
 def customCortexOrder():
