@@ -353,7 +353,7 @@ def allMiceRegions(searchPath:str, channelName:str, normCellIntens:bool = False,
     return dfMerged
 
 
-def loadDotsDf(searchPath:str,  mouseName:str, verbose:bool=True):
+def loadDotsDf(searchPath:str,  mouseName:str, verbose:bool=True, normCellInt:bool =True):
     '''
         Loads processed dots data for a single animal (WFA and PV data after
         colocalization analysis) and creates a dataframe.
@@ -387,12 +387,13 @@ def loadDotsDf(searchPath:str,  mouseName:str, verbose:bool=True):
     dots_df = pd.read_csv(filename, index_col='cellID')
 
     # Normalize intensity values between 0 and 1
-    dots_df['fluoMeanWfa'] = dots_df['fluoMeanWfa'] / 255 
-    dots_df['fluoMeanPv'] = dots_df['fluoMeanPv'] / 255
+    if normCellInt:
+        dots_df['fluoMeanWfa'] = dots_df['fluoMeanWfa'] / 255 
+        dots_df['fluoMeanPv'] = dots_df['fluoMeanPv'] / 255
     return dots_df
 
 
-def allMiceDots(searchPath:str, verbose:bool=True):
+def allMiceDots(searchPath:str, verbose:bool=True, normCellInt:bool = True):
     '''
         Load a unified dataFrame for colocalized dot data of all the mice in the
         searchPath folder 
@@ -418,7 +419,7 @@ def allMiceDots(searchPath:str, verbose:bool=True):
     miceList.sort()                 # sort alphabetically
 
     # Group all animals in a list of dataFrames
-    dfList = [loadDotsDf(searchPath, x, verbose=verbose) for x in miceList]
+    dfList = [loadDotsDf(searchPath, x, verbose=verbose, normCellInt = normCellInt) for x in miceList]
 
     dfMerged = pd.concat(dfList, axis=0)
     cellIDs = dfMerged.index.tolist()
