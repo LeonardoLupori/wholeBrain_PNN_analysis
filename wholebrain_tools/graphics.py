@@ -1535,6 +1535,73 @@ def pvClasses_in_sensorySystems(data:pd.DataFrame, ax:object=None, fontScaling:f
     ax.tick_params(labelsize=16*fontScaling)
 
 
+
+def energySubsetBarplot(data:pd.DataFrame, atlas:object, x:str='energy',
+                                figsize:tuple=(6,6), cmap='Reds',
+                                xlabel:str=None, title:str = None,
+                                fontScaling:float=1, adaptiveHeight:bool=False, dots:bool=True):
+    
+    # Style. white background and no ticks
+    sns.set_style('white')
+    # Create figure and axes
+    if adaptiveHeight:
+        figsize = (figsize[0], data.shape[0]*0.35)
+    f, ax = plt.subplots(figsize=figsize)
+
+    cmaps = cm.get_cmap(cmap)
+
+    # Plot the left and right barplots
+
+    # Select which variable to plot
+    varToPlot =  x
+
+    # Select color for this side of the graph
+    barColor = cmaps(0.5)
+    animalColor = cmaps(0.9)
+
+    meltedData = data.xs(varToPlot, axis='columns', level='params').melt(ignore_index=False)
+
+
+    bp  = sns.barplot(
+            data=meltedData.dropna(),
+            ax=ax,
+            y=atlas.ids_to_names(meltedData.dropna().index.tolist()),
+            x='value',
+            orient="h",
+            alpha=1,
+            linewidth=.5,
+            edgecolor="black",
+            color=barColor,
+            errorbar='se'
+        )
+    if dots:
+        # Plot single animals
+        sns.stripplot(
+                ax=ax,
+                y = atlas.ids_to_names(meltedData.dropna().index.tolist()),
+                x = 'value',
+                data=meltedData.dropna(),
+                size=6,
+                orient="h",
+                jitter= True,
+                alpha=.8,
+                linewidth=0.6,
+                edgecolor="black",
+                color=animalColor,
+            )
+    bp.xaxis.grid(True)
+    sns.despine()
+        # Customize ticks
+    ax.xaxis.set_tick_params(labelsize=16*fontScaling)
+    ax.yaxis.set_tick_params(labelsize=18*fontScaling)
+    if xlabel:
+        ax.xaxis.set_label_text(xlabel, fontsize=18*fontScaling)
+    else:
+        ax.xaxis.set_label_text("")
+
+    if title:
+        ax.set_title(title, fontsize=20*fontScaling)
+
 # ------------------------------------------------------------------------------
 # ACCESSORY FUNCTIONS
 # ------------------------------------------------------------------------------

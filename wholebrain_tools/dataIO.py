@@ -563,5 +563,4 @@ def loadMatrisomeTerms(matrisome_file:str) -> dict:
 
 if __name__ == "__main__":
 
-    resultsPath = 'D:\PizzorussoLAB\proj_PNN-highFatDiet\RESULTS\diffFluo'
-    channelName = 'wfa'
+    paths = pathParser()
