@@ -14,11 +14,11 @@ To run the scripts in this repository you will need:
 In order to run the analysis code you will need to download a set of preprocessed data. You can find the data files in the latest release under the _assets_ menu at this [link](https://github.com/LeonardoLupori/wholeBrain_PNN_analysis/releases/latest)
 
 > **Please Note**  
-> If you want to dowload all the **raw** microscopy data that are related to this paper, you can download the entire dataset on Zenodo [HERE](https://doi.org/10.5281/zenodo.7419283).
+> If you want to download all the **raw** microscopy data that are related to this paper, you can download the entire dataset on Zenodo [HERE](https://doi.org/10.5281/zenodo.7419283).
 
 ### Python Environment
 
-To run the scripts in this repository you will need python 3.8 and the correct version of several additional packages. You can easily install everything in a new vistual environment using anaconda.
+To run the scripts in this repository you will need python 3.8 and the correct version of several additional packages. You can easily install everything in a new virtual environment using anaconda.
 
 To do this, use the following commands:
 
@@ -41,7 +41,7 @@ To run the notebooks download the `DATA` folder from the assets of this repo and
 
 ## wholebrain_tools package
 
-Analysis in this work were conducted with the help of custom code wrapped in a python package. This package contains the following modules:
+Analysis in this work was conducted with the help of custom code wrapped in a python package. This package contains the following modules:
 
 - **aba**: handling of the Allen Brain Atlas
 - **stats**: tools for statistical analysis
@@ -70,7 +70,7 @@ Plots in this figures provide a graphical visualization of the colocalization of
 
 The folder contains the following notebooks:
 
-- **figure_03_colocalization.ipynb** barplots to visulize PNN/PV colocalization at the coarse level
+- **figure_03_colocalization.ipynb** barplots to visualize PNN/PV colocalization at the coarse level
 - **figure_03_prepareDataForBrainRender.ipynb** preprocessing of data required by figure_03_brainRenders.ipynb. Saves a .csv file used for plotting by the brainRenders notebook
 - **figure_03_colocalizationBrainRenders.ipynb** heatmaps representing on brain coronal sections the percentage of PNNs surrounding a PV cells and the percentage of PV cells ensheated by PNNs.
 - **figure_03_correlation_pv_wfa.ipynb** scatterplots representing the relationship of WFA diffuse staining/PNN energy and PV energy.
@@ -113,112 +113,94 @@ Plots in this figures explore correlation of PNN energy with known PNN molecular
 
 ## Figure S01
 
-### The scores assigned by the scoring models correlate with raters’ agreement
+### Evaluation of the scoring model effectiveness and validation of the defined staining metrics
 
-Plots in this figures show the performances of our scoring model
+Folder content:
 
-The folder contains the following notebooks:
+#### The scores assigned by the scoring models correlate with raters’ agreement
 
-- **figure_S01_networkMetrics.ipynb** boxplots representing the score assigned by the model to cells at different levels of agreement
+Plots showing the performances of our scoring model.
+
+- **figure_S01_networkMetrics.ipynb** boxplots representing the score assigned by the model to cells at different levels of agreement.
+
+####  Negligible contribution of WFA background fluorescence to the WFA Diffuse Fluorescence
+
+Plots showing a comparison between WFA-stained slices and negative control slices that lacked the use of biotinylated WFA (but not the streptavidin-conjugated fluorescent probe) in the staining protocol.
+
+- **figure_S01_prepareDataForBrainRender.ipynb** preprocessing of data required by figure_S02_brainRenders.ipynb. Saves a .csv file used for plotting by the brainRenders notebook.
+- **figure_S01_brainRenders.ipynb** heatmaps representing on brain coronal sections average pixel intensity at mid-ontology resolution.
 
 ## Figure S02
 
-###  Negligible contribution of WFA background fluorescence to the WFA Diffuse Fluorescence
+### PNN energy and WFA diffuse fluorescence measurements for medium-resolution brain areas grouped by their major subdivision
 
-Plots in this figure show a comparison between WFA-stained slices and negative control slices that lacked the use of biotinylated WFA (but not the streptavidin-conjugated fluorescent probe) in the staining protocol
+Folder content:
 
-- **figure_S02_prepareDataForBrainRender.ipynb** preprocessing of data required by figure_S02_brainRenders.ipynb. Saves a .csv file used for plotting by the brainRenders notebook
-- **figure_S02_brainRenders.ipynb** heatmaps representing on brain coronal sections average pixel intensity at mid-ontology resolution.
+- **figure_S02.ipynb** Barplots showing PNN energy and WFA diffuse fluorescence at mid-ontology level.
 
 ## Figure S03
 
-### PNN energy and WFA diffuse fluorescence measurements for medium-resolution brain areas grouped by their major subdivision
+### Distribution of PV-positive cells throughout the entire mouse brain
 
-Plots in this figures show PNN expression metrics at mid-ontology resolution
+Folder content:
 
-The folder contains the following notebooks:
-
-- **figure_S03.ipynb** Barplots showing PNN energy and WFA diffuse fluorescence at mid-ontology level.
+- **figure_S03_prepareDataForBrainRender.ipynb** preprocessing of data required by figure_S03_brainRenders.ipynb.
+- **figure_S03_brainrenders.ipynb** heatmaps representing on brain coronal sections PV diffuse fluorescence and PV energy at mid-ontology resolution.
+- **figure_S03_mainVisualizations.ipynb** all the other plots of the figure (scatterplots, heatmaps), representing the relationship of PV diffuse staining and PV energy as well as raw data of individual animals.
 
 ## Figure S04
 
-### Distribution of PV-positive cells throughout the entire mouse brain
+### Colocalization of PNNs and PV cells in medium-resolution brain areas grouped by their major subdivision
 
-The folder contains the following notebooks:
+Folder content:
 
-- **figure_S04_prepareDataForBrainRender.ipynb** preprocessing of data required by figure_S03_brainRenders.ipynb
-- **figure_S04_brainrenders.ipynb** heatmaps representing on brain coronal sections PV diffuse fluorescence and PV energy at mid-ontology resolution.
-- **figure_S04_mainVisualizations.ipynb** all the other plots of the figure (scatterplots, heatmaps), representing the relationship of PV diffuse staining and PV energy as well as raw data of individual animals.
+- **figure_S04_colocalization.ipynb** Barplots showing colocalization of PNNs and PV cells at mid-ontology level.
 
 ## Figure S05
 
-### Colocalization of PNNs and PV cells in medium-resolution brain areas grouped by their major subdivision
+### Energy of PV<sup>-</sup> PNNs for coarse and medium-resolution brain areas
 
-Plots in this figures show PNN/PV colocalization metrics at mid-ontology resolution
+Folder content:
 
-The folder contains the following notebooks:
-
-- **figure_S05_colocalization.ipynb** Barplots showing colocalization of PNNs and PV cells at mid-ontology level.
+- **figure_S05_PVnegativePNNenergy.ipynb** Barplots showing PV<sup>-</sup> PNNs at coarse mid-ontology level.
 
 ## Figure S06
 
-### Energy of PV<sup>-</sup> PNNs for coarse and medium-resolution brain areas
+### WFA diffuse fluorescence and PV staining metrics in sensory cortical areas
 
-Plots in this figure show the energy of PV<sup>-</sup> PNN energy at coarse and mid-ontology resolution.
+Folder content:
 
-- **figure_S06_PVnegativePNNenergy.ipynb** Barplots showing PV<sup>-</sup> PNNs at coarse mid-ontology level.
+#### WFA Diffuse Fluorescence in primary vs secondary areas by layers
+
+- **figure_S06_WFAdiff_bylayer_.ipynb** Barplots showing WFA in sensory areas.
+
+#### PV cell distribution in sensory cortical areas
+
+- **figure_S06_primarySecondaryPV.ipynb** Barplots showing PV expression in sensory areas.
 
 ## Figure S07
 
-### WFA Diffuse Fluorescence in primary vs secondary areas by layers
+### Determinants of PNN expression in the cortex
 
-Plots in this figures show WFA diffuse fluorescence in sensory primary versus associative areas, split by layers.
+Folder content:
 
-The folder contains the following notebooks:
+#### PV cell intensity and colocalization with PNNs in the sensory areas of the cortex
 
-- **figure_S07_WFAdiff_bylayer_.ipynb** Barplots showing WFA in sensory areas.
+- **figure_S07_colocalizationPrimary_secondary.ipynb** Barplots showing PNN/PV colocalization in sensory areas.
+- **figure_S07_PVPNN_primarySecondary.ipynb** Barplots showing the distribution of PV cells by intensity class in sensory areas.
 
-## Figure S08
+#### Thalamic inputs from the association-cortex-related portion of the thalamus (DORpm) do not correlate with PNNs in sensory cortices
 
-### PV cell distribution in sensory cortical areas
+- **figure_S07_nonsensoryThalamus.ipynb** scatterplots representing the relationship between PNN expression in layers of the sensory cortex and density of DORpm afference.
 
-Plots in this figures show PV distribution the sensory areas of the cortex.
+#### Properties of PV cells in high-WFA and low-WFA cortical subnetworks
 
-The folder contains the following notebooks:
-
-- **figure_S08_primarySecondaryPV.ipynb** Barplots showing PV expression in sensory areas.
-
-## Figure S09
-
-### PV cell intensity and colocalization with PNNs in the sensory areas of the cortex
-
-The folder contains the following notebooks:
-
-- **figure_S09_colocalizationPrimary_secondary.ipynb** Barplots showing PNN/PV colocalization in sensory areas.
-- **figure_S09_PVPNN_primarySecondary.ipynb** Barplots showing the distribution of PV cells by intensity class in sensory areas.
-
-## Figure S10
-
-### Thalamic inputs from the association-cortex-related portion of the thalamus (DORpm) do not correlate with PNNs in sensory cortices
-
-Plots in this figure represent correlation between PNN expression in the sensory areas of the cortex and afference from non-sensory thalamus
-
-- **figure_S10_nonsensoryThalamus.ipynb** scatterplots representing the relationship between PNN expression in layers of the sensory cortex and density of DORpm afference.
-
-## Figure S11
-
-### Properties of PV cells in high-WFA and low-WFA cortical subnetworks
-
-Plots in this figures show properties of PV cells in cortical subnetworks
-
-The folder contains the following notebooks:
-
-- **figure_S11_functionalGroups_PV_coloc.ipynb** Barplots showing PNN/PV colocalization and PV energy in cortical subnetworks.
+- **figure_S07_functionalGroups_PV_coloc.ipynb** Barplots showing PNN/PV colocalization and PV energy in cortical subnetworks.
 
 ## Supplementary data
 
 Supplementary data are provided as .xlsx files produced with the following notebooks:
 
-- **data_SD1_SD2.ipynb** whole-brain PNN/PV metrics
-- **data_SD3.ipynb** whole-brain PNN/PV colocalization metrics
-- **data_SD4.ipynb** correlation of staining metrics with gene expression
+- **data_SD1_SD2.ipynb** whole-brain PNN/PV metrics.
+- **data_SD3.ipynb** whole-brain PNN/PV colocalization metrics.
+- **data_SD4.ipynb** correlation of staining metrics with gene expression.
