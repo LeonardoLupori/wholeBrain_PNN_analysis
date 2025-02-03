@@ -1,3 +1,4 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7991607.svg)](https://doi.org/10.5281/zenodo.7991607)
 # wholeBrain_PNN_analysis
 
 Analysis code to reproduce all figures of the paper [_A Comprehensive Atlas of Perineuronal Net Distribution and Colocalization with Parvalbumin in the Adult Mouse Brain_](https://www.cell.com/cell-reports/fulltext/S2211-1247(23)00799-4)
